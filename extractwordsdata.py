@@ -277,6 +277,351 @@ def threeletters(datasplit, datasplit2):
 
   Finaltestafterlistchecks(Results)
 
+def fiveletters(datasplit, datasplit2):
+
+  #ceate list for each letter
+  list1 = []
+  list3 = []
+  list2 = []
+  list4 = []
+  list5 = []
+
+
+  #append numbers + letter to each list
+  for i in range(6):
+    list1.append(datasplit[i])
+  for i in range(6, 12):
+    list2.append(datasplit[i])
+  for i in range(12, 18):
+    list3.append(datasplit[i])
+  for i in range(18, 24):
+    list4.append(datasplit[i])
+  for i in range(24, 30):
+    list5.append(datasplit[i])
+  #add first column and rows to dataframe
+  df = pd.DataFrame({list1[0]:list1[1:5]}, index=[1,2,3,4])
+
+  listoflists = [list1, list2, list3, list4, list5]
+  print(listoflists)
+  check = []
+  x = 1
+  for i in listoflists:
+    name = i[0]
+    if i[0] in check:
+      name = name + ' ' * x
+      df[name] = i[1:5]
+      x = x+1
+    else:
+      df[i[0]] = i[1:5]
+    check.append(i[0])
+
+  print(datasplit)
+  print(df)
+
+  #ceate list for each letter
+  list12 = []
+  list32 = []
+  list22 = []
+  list42 = []
+  list52 = []
+
+
+  #append numbers + letter to each list
+  for i in range(6):
+    list12.append(datasplit2[i])
+  for i in range(6, 12):
+    list22.append(datasplit2[i])
+  for i in range(12, 18):
+    list32.append(datasplit2[i])
+  for i in range(18, 24):
+    list42.append(datasplit2[i])
+  for i in range(24, 30):
+    list52.append(datasplit2[i])
+  #add first column and rows to dataframe
+  df2 = pd.DataFrame({list12[0]:list12[1:5]}, index=[1,2,3,4])
+
+  listoflists2 = [list12, list22, list32, list42, list52]
+  print(listoflists2)
+  check2 = []
+  x2 = 1
+  for i in listoflists2:
+    name2 = i[0]
+    if i[0] in check2:
+      name2 = name2 + ' ' * x2
+      df2[name2] = i[1:5]
+      x2 = x2 + 1
+    else:
+      df2[i[0]] = i[1:5]
+    check2.append(i[0])
+  print(datasplit2)
+  print(df2)
+
+    #variables
+
+  checklist1 = list(df[list1[0]][0:4])
+  print(checklist1)
+  #list1[0] = 'letter index/column name'
+
+  checklist12 = list(df2[list12[0]][0:4])
+  print(checklist12)
+
+  checklist2 = list(df[list2[0]][0:4])
+
+  checklist22 = list(df2[list22[0]][0:4])
+
+  checklist3 = list(df[list3[0]][0:4])
+
+  checklist32 = list(df2[list32[0]][0:4])
+
+  checklist4 = list(df[list4[0]][0:4])
+
+  checklist42 = list(df2[list42[0]][0:4])
+
+  checklist5 = list(df[list5[0]][0:4])
+
+  checklist52 = list(df2[list52[0]][0:4])
+
+
+  Results = []
+
+  check_lists(checklist1,checklist12)
+  check_lists(checklist2,checklist22)
+  check_lists(checklist3,checklist32)
+  check_lists(checklist4,checklist42)
+  check_lists(checklist5, checklist52)
+  Finaltestafterlistchecks(Results)
+
+  input('enter to exit: ')
+
+def fourletters(datasplit, datasplit2):
+
+  #ceate list for each letter
+  list1 = []
+  list3 = []
+  list2 = []
+  list4 = []
+
+
+  #append numbers + letter to each list
+  for i in range(6):
+    list1.append(datasplit[i])
+  for i in range(6, 12):
+    list2.append(datasplit[i])
+  for i in range(12, 18):
+    list3.append(datasplit[i])
+  for i in range(18, 24):
+    list4.append(datasplit[i])
+
+  #add first column and rows to dataframe
+  df = pd.DataFrame({list1[0]:list1[1:5]}, index=[1,2,3,4])
+
+  listoflists = [list1, list2, list3, list4]
+  print(listoflists)
+  check = []
+  x = 1
+  for i in listoflists:
+    name = i[0]
+    if i[0] in check:
+      name = name + ' ' * x
+      df[name] = i[1:5]
+      x = x+1
+    else:
+      df[i[0]] = i[1:5]
+    check.append(i[0])
+  print(datasplit)
+  print(df)
+
+  #ceate list for each letter
+  list12 = []
+  list32 = []
+  list22 = []
+  list42 = []
+
+
+  #append numbers + letter to each list
+  for i in range(6):
+    list12.append(datasplit2[i])
+  for i in range(6, 12):
+    list22.append(datasplit2[i])
+  for i in range(12, 18):
+    list32.append(datasplit2[i])
+  for i in range(18, 24):
+    list42.append(datasplit2[i])
+
+  #add first column and rows to dataframe
+  df2 = pd.DataFrame({list12[0]:list12[1:5]}, index=[1,2,3,4])
+
+  listoflists2 = [list12, list22, list32, list42]
+  print(listoflists2)
+  check2 = []
+  x2 = 1
+  for i in listoflists2:
+    name2 = i[0]
+    if i[0] in check2:
+      name2 = name2 + ' ' * x2
+      df2[name2] = i[1:5]
+      x2 = x2 + 1
+    else:
+      df2[i[0]] = i[1:5]
+    check2.append(i[0])
+  print(datasplit2)
+  print(df2)
+
+    
+  checklist1 = list(df[list1[0]][0:4])
+
+  #list1[0] = 'letter index/column name'
+
+  checklist12 = list(df2[list12[0]][0:4])
+
+
+  checklist2 = list(df[list2[0]][0:4])
+
+  checklist22 = list(df2[list22[0]][0:4])
+
+  checklist3 = list(df[list3[0]][0:4])
+
+  checklist32 = list(df2[list32[0]][0:4])
+
+  checklist4 = list(df[list4[0]][0:4])
+
+  checklist42 = list(df2[list42[0]][0:4])
+
+
+
+  Results = []
+
+  check_lists(checklist1,checklist12)
+  check_lists(checklist2,checklist22)
+  check_lists(checklist3,checklist32)
+  check_lists(checklist4,checklist42)
+
+  Finaltestafterlistchecks(Results)
+
+def Sixletters(datasplit, datasplit2):
+
+
+    #ceate list for each letter
+    list1 = []
+    list3 = []
+    list2 = []
+    list4 = []
+    list5 = []
+    list6 = []
+
+
+    #append numbers + letter to each list
+    for i in range(6):
+      list1.append(datasplit[i])
+    for i in range(6, 12):
+      list2.append(datasplit[i])
+    for i in range(12, 18):
+      list3.append(datasplit[i])
+    for i in range(18, 24):
+      list4.append(datasplit[i])
+    for i in range(24, 30):
+      list5.append(datasplit[i])
+    for i in range(30, 36):
+      list6.append(datasplit[i])
+    #add first column and rows to dataframe
+    df = pd.DataFrame({list1[0]:list1[1:5]}, index=[1,2,3,4])
+
+    listoflists = [list1, list2, list3, list4, list5, list6]
+    print(listoflists)
+    check = []
+    x = 1
+    for i in listoflists:
+      name = i[0]
+      if i[0] in check:
+        name = name + ' ' * x
+        df[name] = i[1:5]
+        x = x+1
+      else:
+        df[i[0]] = i[1:5]
+      check.append(i[0])
+    print(datasplit)
+    print(df)
+
+    #ceate list for each letter
+    list12 = []
+    list32 = []
+    list22 = []
+    list42 = []
+    list52 = []
+    list62 = []
+
+
+    #append numbers + letter to each list
+    for i in range(6):
+      list12.append(datasplit2[i])
+    for i in range(6, 12):
+      list22.append(datasplit2[i])
+    for i in range(12, 18):
+      list32.append(datasplit2[i])
+    for i in range(18, 24):
+      list42.append(datasplit2[i])
+    for i in range(24, 30):
+      list52.append(datasplit2[i])
+    for i in range(30, 36):
+      list62.append(datasplit2[i])
+    #add first column and rows to dataframe
+    df2 = pd.DataFrame({list12[0]:list12[1:5]}, index=[1,2,3,4])
+
+    listoflists2 = [list12, list22, list32, list42, list52, list62]
+    print(listoflists2)
+    check2 = []
+    x2 = 1
+    for i in listoflists2:
+      name2 = i[0]
+      if i[0] in check2:
+        name2 = name2 + ' ' * x2
+        df2[name2] = i[1:5]
+        x2 = x2 + 1
+      else:
+        df2[i[0]] = i[1:5]
+      check2.append(i[0])
+    print(datasplit2)
+    print(df2)
+
+
+      #variables
+
+    checklist1 = list(df[list1[0]][0:4])
+    print(checklist1)
+    #list1[0] = 'letter index/column name'
+
+    checklist12 = list(df2[list12[0]][0:4])
+    print(checklist12)
+
+    checklist2 = list(df[list2[0]][0:4])
+
+    checklist22 = list(df2[list22[0]][0:4])
+
+    checklist3 = list(df[list3[0]][0:4])
+
+    checklist32 = list(df2[list32[0]][0:4])
+
+    checklist4 = list(df[list4[0]][0:4])
+
+    checklist42 = list(df2[list42[0]][0:4])
+
+    checklist5 = list(df[list5[0]][0:4])
+
+    checklist52 = list(df2[list52[0]][0:4])
+
+    checklist6 = list(df[list6[0]][0:4])
+
+    checklist62 = list(df2[list62[0]][0:4])
+
+
+    check_lists(checklist1,checklist12)
+    check_lists(checklist2,checklist22)
+    check_lists(checklist3,checklist32)
+    check_lists(checklist4,checklist42)
+    check_lists(checklist5, checklist52)
+    check_lists(checklist6, checklist62)
+    Finaltestafterlistchecks(Results)
+
 def findcommonwords():    
     img = input('file name: ')
     #img = r'C:\\Users\\ennie\\Downloads\\everything\\images\\fivele.png'
